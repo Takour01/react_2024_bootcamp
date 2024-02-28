@@ -1,0 +1,11 @@
+.inside {
+  &__downer {
+    @apply text-white border-primary grid md:grid-cols-2 gap-5;
+    &__item {
+      @apply px-4 border-b-2 border-white rounded-md bg-secondary mb-3;
+    }
+    &__trigger {
+      @apply text-xl font-semibold;
+    }
+  }
+}

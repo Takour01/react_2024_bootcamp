@@ -1,0 +1,106 @@
+.home__header {
+  @apply flex flex-col md:flex-row justify-center;
+  &__left {
+    @apply flex flex-col pt-10 sm:pt-0 md:justify-center w-full md:w-1/2 gap-6 text-white lg:pl-12 md:pl-8 pl-6;
+  }
+  &__right {
+    overflow: visible;
+    & > .white {
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      left: 0%;
+      z-index: 2;
+      rotate: 20deg;
+      scale: 2;
+      @apply bg-white;
+    }
+    & > .blue {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      width: 90%;
+
+      @apply bg-secondary;
+    }
+    @apply flex items-end justify-end w-full md:w-1/2 min-h-full relative;
+  }
+}
+
+@media (max-width: 1150px) {
+  .home__header {
+    &__right {
+      & > .white {
+        position: absolute;
+        height: 100%;
+        width: 30%;
+        left: 0%;
+        z-index: 2;
+        rotate: 20deg;
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+        scale: 2;
+        @apply bg-white;
+      }
+      & > .blue {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 80%;
+
+        @apply bg-secondary;
+      }
+    }
+  }
+}
+@media (max-width: 930px) {
+  .home__header {
+    &__right {
+      & > .white {
+        position: absolute;
+        height: 100%;
+        width: 35%;
+        left: 0%;
+        z-index: 2;
+        rotate: 20deg;
+
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 39% 100%);
+
+        scale: 2;
+        @apply bg-white;
+      }
+      & > .blue {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 80%;
+
+        @apply bg-secondary;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home__header {
+    &__right {
+      & > .white {
+        position: absolute;
+        height: 200%;
+        width: 20%;
+        left: 0%;
+        z-index: 2;
+        rotate: 50deg;
+        transform: translateX(120%); // scale: 2;
+        clip-path: polygon(26% 0, 77% 0, 100% 100%, 0 100%);
+        @apply bg-white;
+      }
+      & > .blue {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 100%;
+        clip-path: polygon(72% 1%, 100% 0%, 100% 100%, 0 100%);
+        @apply bg-secondary;
+      }
+    }
+  }
+}

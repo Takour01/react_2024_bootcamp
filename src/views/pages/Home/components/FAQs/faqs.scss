@@ -1,0 +1,11 @@
+.faq {
+  &__downer {
+    @apply text-white border-primary gap-5 w-full flex flex-col items-center justify-center;
+    &__item {
+      @apply px-4 border-2 border-secondary rounded-md bg-transparent mb-3 text-primary w-3/4 shadow-lg;
+    }
+    &__trigger {
+      @apply text-xl font-semibold;
+    }
+  }
+}

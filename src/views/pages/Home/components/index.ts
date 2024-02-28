@@ -1,0 +1,7 @@
+export { default as HomeHeader } from "./Header/Header"
+export { default as HomeSocials } from "./Socials/Socials"
+export { default as HomeAgenda } from "./Agenda/Agenda"
+export { default as HomeInside } from "./Inside/Inside"
+export { default as HomeProjects } from "./Projects/Projects"
+export { default as HomeTeachers } from "./Teachers/Teachers"
+export { default as HomeFAQs } from "./FAQs/FAQs"
