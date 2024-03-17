@@ -19,8 +19,10 @@ import { Route as rootRoute } from './routes/__root'
 const IndexLazyImport = createFileRoute('/')()
 const PropsIndexLazyImport = createFileRoute('/props/')()
 const ListsIndexLazyImport = createFileRoute('/lists/')()
+const LifeIndexLazyImport = createFileRoute('/life/')()
 const JsxIndexLazyImport = createFileRoute('/jsx/')()
 const InitialIndexLazyImport = createFileRoute('/initial/')()
+const HooksIndexLazyImport = createFileRoute('/hooks/')()
 const FormsIndexLazyImport = createFileRoute('/forms/')()
 const EventsIndexLazyImport = createFileRoute('/events/')()
 const EnvironmentIndexLazyImport = createFileRoute('/environment/')()
@@ -45,6 +47,11 @@ const ListsIndexLazyRoute = ListsIndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/lists/index.lazy').then((d) => d.Route))
 
+const LifeIndexLazyRoute = LifeIndexLazyImport.update({
+  path: '/life/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/life/index.lazy').then((d) => d.Route))
+
 const JsxIndexLazyRoute = JsxIndexLazyImport.update({
   path: '/jsx/',
   getParentRoute: () => rootRoute,
@@ -54,6 +61,11 @@ const InitialIndexLazyRoute = InitialIndexLazyImport.update({
   path: '/initial/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/initial/index.lazy').then((d) => d.Route))
+
+const HooksIndexLazyRoute = HooksIndexLazyImport.update({
+  path: '/hooks/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/hooks/index.lazy').then((d) => d.Route))
 
 const FormsIndexLazyRoute = FormsIndexLazyImport.update({
   path: '/forms/',
@@ -123,12 +135,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormsIndexLazyImport
       parentRoute: typeof rootRoute
     }
+    '/hooks/': {
+      preLoaderRoute: typeof HooksIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/initial/': {
       preLoaderRoute: typeof InitialIndexLazyImport
       parentRoute: typeof rootRoute
     }
     '/jsx/': {
       preLoaderRoute: typeof JsxIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/life/': {
+      preLoaderRoute: typeof LifeIndexLazyImport
       parentRoute: typeof rootRoute
     }
     '/lists/': {
@@ -152,8 +172,10 @@ export const routeTree = rootRoute.addChildren([
   EnvironmentIndexLazyRoute,
   EventsIndexLazyRoute,
   FormsIndexLazyRoute,
+  HooksIndexLazyRoute,
   InitialIndexLazyRoute,
   JsxIndexLazyRoute,
+  LifeIndexLazyRoute,
   ListsIndexLazyRoute,
   PropsIndexLazyRoute,
 ])

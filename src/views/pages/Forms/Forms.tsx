@@ -58,7 +58,7 @@ return <form onSubmit={handleSubmit} className="example" >
         <Link to="/lists" className="text-2xl text-white ">
           {"<"} PREV
         </Link>
-        <Link to="/lists" className="text-2xl text-white ">
+        <Link to="/life" className="text-2xl text-white ">
           NEXT {">"}
         </Link>
       </section>

@@ -23,7 +23,9 @@ type hrefType =
   | "/conditional"
   | "/lists"
   | "/forms"
-  | "/props";
+  | "/props"
+  | "/life"
+  | "/hooks";
 
 const links: {
   href: hrefType;
@@ -37,6 +39,8 @@ const links: {
   { href: "/conditional" },
   { href: "/lists" },
   { href: "/forms" },
+  { href: "/life" },
+  { href: "/hooks" },
 ];
 
 export default function RightNav() {
